@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apihorario-php-apache-environment	
+  labels:
+    zone: prod
+    version: v1
+spec:
+  containers:
+    - name: apihorario-php-apache-environment	
+      image: luisito123/apihorario-php-apache-environment:v1

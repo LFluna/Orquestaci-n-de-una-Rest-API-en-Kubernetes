@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crud-reticula
+  labels:
+    app: crud-reticula-front
+spec:
+  selector:
+    matchLabels:
+      app: crud-reticula-front
+      tier: crud-reticula
+  replicas: 7
+  template:
+    metadata:
+      labels:
+        app: crud-reticula-front
+        tier: crud-reticula
+    spec:
+      containers:
+        - name: crud-reticula
+          image: luisito123/apihorario-php-apache-environment:v1
+          ports:
+            - containerPort: 80
